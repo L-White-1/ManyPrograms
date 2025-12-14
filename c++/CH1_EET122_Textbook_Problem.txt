@@ -1,0 +1,41 @@
+/*Write a program that inputs a character from the keyboard and then
+outputs a large block letter “C” composed of that character.*/
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    char user_letter;
+    cout<<"Enter a Letter: ";
+    cin>>user_letter;
+    for(int i = 0; i < 10; i++) 
+    {
+        for(int j = 0; j < 5; j++)
+        {
+            //Top of C
+            if ((i == 0 && j < 5 && j > 1) || (i == 7 && j < 5 && j > 1))
+            {
+            cout << " " << user_letter;
+            }//Curve of C 
+            else if ((i == 1 && j == 1) || (i == 6 && j == 1) )
+            {
+                cout << " " << user_letter;
+            } else if ((i == 1 && j == 4) || (i == 6 && j == 4))
+            {
+                cout << "  " << user_letter;;
+            }
+            //Back of C
+            else if (i > 1 && i < 6 && j == 0)
+            {
+                cout << user_letter;;
+            }
+            
+            else 
+            {
+                cout<<" ";
+            }
+        }
+        cout<<endl;
+    }
+    return 0;
+}

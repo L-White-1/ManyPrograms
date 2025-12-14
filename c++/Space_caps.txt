@@ -1,0 +1,25 @@
+//This program capitalizes and spaces out your string.
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    //Make a while loop
+    cout<<"Enter string: ";
+    string sent;
+    getline(cin, sent);
+    int var = 0;
+    if (sent.length() < 39){
+        
+        while (var < sent.length()){
+            putchar(toupper(sent[var]));
+            cout<<" ";
+            var++;
+    }
+    } else {
+        cout<<"Line too long.";
+    }
+    
+
+    return 0;
+}

@@ -1,0 +1,42 @@
+// Functions practice.
+#include <iostream>
+using namespace std;
+
+//Function declarations.
+int multiplyNum (int a, int b);
+int addNum (int c, int d);
+
+int main() {
+    //variables as a placeholder for the function arguments.
+    int x, y;
+    //A variable to hold the function and cout for its return value.
+    int product = multiplyNum(x, y);
+    cout<<product<<endl;
+    //A variable to hold the function and cout for its return value.
+    int sum = addNum(x, y);
+    cout<<sum<<endl;
+ 
+    return 0;
+}
+//Function Definitions.
+ int multiplyNum (int a, int b)
+    {
+        cout<<"Enter a number: "<<endl;
+        cin>>a;
+         cout<<"Enter another number: "<<endl;
+        cin>>b;
+        int mult = a*b;
+        cout<<"Their product is: ";
+        return mult;
+    }
+    
+    int addNum (int c, int d)
+    {
+        cout<<"Enter a number: "<<endl;
+        cin>>c;
+        cout<<"Enter another number: "<<endl;
+        cin>>d;
+        int add = c+d;
+        cout<<"Their sum is: ";
+        return add;
+    }

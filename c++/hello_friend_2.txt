@@ -1,0 +1,81 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+using namespace std;
+
+int main() {
+    srand(time(0));
+    bool user_end = false;
+    int dice = rand() % 3;
+    string user_input;
+    
+    string hello = "Hello!", hi = "Hi! It's always great to see you!", hey = "Hey! :D";
+    
+    string weather_sun = "It's a beautiful and sunny day!", weather_rain = "It's a peaceful rainy day.", weather_cloudy = "It's a perfect day to go outside!";
+    
+    string bye = "Byebye!", goodbye = "goodbye :D", later = "See you later!";
+    
+    cout<<"Welcome to your digital friend's space. You must enter a phrase exactly as it's written in lowercase. Here's what you can say to it: \nhello\nhow's the weather?\ngoodbye\nSaying goodbye will end the program."<<endl;
+        cout<<"Enter: ";
+        getline(cin, user_input);
+    
+    while (user_end == false)
+    {
+         if (user_input == "goodbye")
+        {
+            user_end = true;
+        } else if (user_input == "hello")
+        {
+            if (dice == 0)
+            {
+                cout<<hello<<endl;
+            }
+            else if (dice == 1)
+            {
+                cout<<hi<<endl;;
+            } 
+            else 
+            {
+               cout<<hey<<endl;
+            }
+        }
+        else if (user_input == "how's the weather?")
+        {
+            if (dice == 0)
+            {
+                cout<<weather_sun<<endl;
+            }
+            else if (dice == 1)
+            {
+                cout<<weather_rain<<endl;
+            } 
+            else 
+            {
+               cout<<weather_cloudy<<endl;
+            }
+        }
+        else 
+        {
+            cout<<"Invalid input. You must enter the phrase exactly as it's written in lowercase."<<endl;
+        }
+        if (user_end == false) 
+        {
+        cout<<"Your turn: ";
+        getline(cin, user_input);
+        }
+    }
+            if (dice == 0)
+            {
+                cout<<bye<<endl;
+            }
+            else if (dice == 1)
+            {
+                cout<<goodbye<<endl;
+            } 
+            else 
+            {
+               cout<<later<<endl;
+            }
+            
+    return 0;
+}

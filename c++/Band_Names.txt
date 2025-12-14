@@ -1,0 +1,74 @@
+// This program will give you a list of band names based on your input.
+#include <iostream>
+#include <string>
+#include <limits>
+using namespace std;
+
+void band_names ();
+
+int main() {
+bool user_answer;
+
+do 
+{
+band_names();
+char answer;
+cout<<endl<<"Continue? [Y/N] ";
+cin>>answer;
+if (tolower(answer) == 'n')
+{
+    user_answer = false;
+    
+} 
+else if (tolower(answer) == 'y')
+{
+    user_answer = true;
+}
+else 
+{
+    cout<<"Invalid Input. Restarting."<<endl;
+    user_answer = true;
+}
+cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+} while(user_answer == true);
+
+cout<<"Goodbye";
+    return 0;
+}
+
+void band_names() {
+   string user_input;
+   
+   //Band lists
+   string list_a = "Abbath, Amon Amarth, A Goat as Our Shephard";
+   string list_b = "Behemoth, Beelzebul, Beholder's Cult";
+   string list_c = "Cadaver, Cain, Call from Abyss";
+  
+  //Asks and gets user input.
+    cout<<"Enter a band starting with the letter a to c, and I'll tell you other bands that start with the same letter: ";
+    getline(cin,user_input);
+    
+  
+  //Gets first letter and stores it in variable.
+  char user_to_lower = (char)tolower(user_input[0]);
+  
+//Tests to see if user's input matches.
+ if (user_to_lower == 'a')
+    {
+        cout<<list_a;
+    }
+    else if (user_to_lower == 'b')
+    {
+        cout<<list_b;
+    }
+    else if (user_to_lower == 'c')
+    {
+        cout<<list_c;
+    }
+    else
+    {
+        cout<<"Enter a valid input. Try again.";
+    }
+
+}
